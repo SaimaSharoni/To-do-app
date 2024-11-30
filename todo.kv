@@ -1,0 +1,49 @@
+Interface: 
+    Screen:
+        name: "MainScreen"
+        BoxLayout:
+            orientation: "vertical"
+            padding: dp(10)
+            spacing: dp(30)
+            
+            Label:
+                text: "To-do App"
+                font_size: "32sp"
+                size_hint: 1, None
+                height: dp(80)
+            
+            ScrollView:
+                do_scroll_y: True
+                GridLayout:
+                    id: gridLayout
+                    cols: 1
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    
+            
+            Button:
+                text: "Add"
+                size_hint: 1, None
+                height: dp(60)
+                on_press: root.show_popup()
+
+
+    Screen:
+        name: "Details Screen"
+        BoxLayout:
+            orientation: "vertical"
+            padding:dp(10)
+            spacing:dp(10)
+            Label:
+                id: noticeTitle
+                text: "Notice"
+                size_hint_y: None
+                height:dp(80)
+            TextInput:
+                id: inputData
+            Button:
+                size_hint_y:None
+                height:dp(80)
+                text:"Back"
+                on_press: root.back_btn()
